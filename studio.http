@@ -1,0 +1,142 @@
+###
+GET http://localhost:1337/api/market-contents/3?populate=*
+accept: application/json
+
+###
+POST http://localhost:1337/api/market-contents
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "name": "string",
+    "thumbnail": "string or id",
+    "original": "string or id",
+    "views": "string",
+    "license": "string",
+    "link": "string",
+    "category": "string",
+    "createdAt": "2022-05-06T07:36:30.821Z",
+    "updatedAt": "2022-05-06T07:36:30.821Z",
+    "publishedAt": "2022-05-06T07:36:30.821Z",
+    "createdBy": "string or id",
+    "updatedBy": "string or id"
+  }
+}
+
+###
+POST http://localhost:1337/api/auth/local
+accept: application/json
+Content-Type: application/json
+
+{
+  "identifier" : "widebrain@gmail.com",
+  "password" : "widebrain1234"
+}
+
+###
+POST http://115.85.183.39:1337/api/auth/local
+accept: application/json
+Content-Type: application/json
+
+{
+  "identifier" : "widebrain@gmail.com",
+  "password" : "widebrain1234"
+}
+
+
+
+###
+POST http://115.85.183.39:1337/api/auth/local/register
+Content-Type: application/json
+
+{
+  "username": "Strapi user2",
+  "email": "user2@strapi.io",
+  "password": "strapiPassword"
+}
+
+###
+GET http://115.85.183.39:1337/api/users
+accept: application/json
+
+
+###
+# curl -X 'POST'
+#  'http://localhost:1337/statuses'
+#  -H 'accept: application/json'
+#  -H 'Content-Type: application/json'
+#  -d '{
+#  "name": "string",
+#  "data": {},
+#  "published_at": "2022-05-23T02:36:41.906Z",
+#  "created_by": "string",
+#  "updated_by": "string"
+#}'
+POST http://118.67.130.99:1337/statuses
+accept: application/json
+Content-Type: application/json
+
+{
+  "name": "tiger",
+  "data": {"testStatus":  "Running"},
+  "published_at": "2022-05-23T02:36:41.906Z"
+}
+
+###
+GET http://localhost:1337/api/categories/1
+
+###
+GET http://localhost:1337/api/categories/1
+
+###
+GET http://localhost:1338/api/properties/35
+
+###
+GET http://localhost:1338/api/users/1?populate=*
+
+###
+GET http://localhost:1338/api/users/me
+
+
+
+###
+GET http://localhost:1338/api/properties?populate[users_permissions_user][sort][0]=username%3Aasc&populate[users_permissions_user][filters][id][$eq]=1
+
+### 첫번째 다시
+POST http://192.168.0.15:1337/api/test-1s
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "testJson": {"test":1}
+  }
+}
+
+### upload 파일
+POST http://192.168.0.15:1337/api/upload
+Content-Type: multipart/form-data; boundary=123123
+
+--123123
+Content-Disposition: form-data; name="ref"
+Content-Type: text/plain; charset=UTF-8
+
+api::test-1.test-1
+--123123
+Content-Disposition: form-data; name="refId"
+Content-Type: text/plain; charset=UTF-8
+
+9
+--123123
+Content-Disposition: form-data; name="field"
+Content-Type: text/plain; charset=UTF-8
+
+testMedia
+--123123
+Content-Disposition: form-data; name="files"; filename="sample3.jpeg"
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: binary
+
+{byte arr}
+--123123--

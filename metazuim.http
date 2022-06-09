@@ -1,0 +1,106 @@
+### status 조회
+GET http://localhost:1338/statuses/1
+
+###
+GET http://localhost:1338/api/categories/1
+
+### 상태 등록
+POST http://118.67.130.99:1337/statuses
+accept: application/json
+Content-Type: application/json
+
+{
+  "name": "tiger",
+  "data": {"testStatus":  "Running"},
+  "published_at": "2022-05-23T02:36:41.906Z"
+}
+
+### 사용자 조회
+GET http://localhost:1338/api/users/2?populate=*
+
+### 사용자 펫만 조회
+GET http://localhost:1338/api/users/2?populate[0]=user_pets
+
+### 사용자 쿼스트만 조회
+GET http://localhost:1338/api/users/2?populate[0]=user_qusets
+
+### 사용자 등록
+POST http://192.168.0.15:1338/api/auth/local?populate=*
+accept: application/json
+Content-Type: application/json
+
+{
+  "identifier" : "tester@widebrain.kr",
+  "password" : "Widebrain11!"
+}
+
+### 재화 수정
+PUT http://192.168.0.15:1338/api/properties/1
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "gold": 150
+  }
+}
+
+
+### 펫 등록
+POST http://localhost:1338/api/pets
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "name": "cat"
+  }
+}
+
+### 전체 펫 조회
+GET http://localhost:1338/api/pets
+
+### 펫 하나 조회
+GET http://localhost:1338/api/pets/1
+
+### 유저 펫 조회
+GET http://localhost:1338/api/user-pets/7?populate[0]=pet
+
+### 유저 펫 등록
+POST http://localhost:1338/api/user-pets
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "pet": 1,
+    "users_permissions_user": 1,
+    "experience": 0,
+    "level": 0
+  }
+}
+
+### 유저 펫 수정
+PUT http://localhost:1338/api/user-pets/1
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "level": 2
+  }
+}
+
+### 유저 펫 삿제
+DELETE http://localhost:1338/api/user-pets/8
+
+### 퀘스트 수정
+PUT http://localhost:1338/api/user-quests/3
+accept: application/json
+Content-Type: application/json
+
+{
+  "data": {
+    "progress": 60
+  }
+}
