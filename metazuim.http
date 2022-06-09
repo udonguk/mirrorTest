@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### 사용자 조회
-GET http://localhost:1338/api/users/2?populate=*
+GET http://192.168.0.15:1338/api/users/1?populate=*
 
 ### 사용자 펫만 조회
 GET http://localhost:1338/api/users/2?populate[0]=user_pets
@@ -81,13 +81,13 @@ Content-Type: application/json
 }
 
 ### 유저 펫 수정
-PUT http://localhost:1338/api/user-pets/1
+PUT http://localhost:1338/api/user-pets/7
 accept: application/json
 Content-Type: application/json
 
 {
   "data": {
-    "level": 2
+    "level": 3
   }
 }
 

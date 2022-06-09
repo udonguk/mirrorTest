@@ -60,6 +60,18 @@ Content-Type: application/json
 GET http://115.85.183.39:1337/api/users
 accept: application/json
 
+### 테마 조회
+GET http://localhost:1337/api/themes/1?populate=*
+
+### 테마 전체 조회
+GET http://localhost:1337/api/themes/1?populate[categories][populate]=*
+
+### 카테고리 조회
+GET http://localhost:1337/api/categories/4?populate=*
+
+### 카테고리 조회
+GET http://localhost:1337/api/categories/5?populate=*
+
 
 ###
 # curl -X 'POST'
